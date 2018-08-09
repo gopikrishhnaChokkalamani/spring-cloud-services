@@ -1,15 +1,12 @@
 spring:
   application:
     name: admin-server
-    
 server:
   port: 7700
-  
 eureka:
   client:
     registry-fetch-interval-seconds: 5
     service-url.defaultZone: http://localhost:8700/eureka/
-    
 info:
   app:
     name: admin-server
