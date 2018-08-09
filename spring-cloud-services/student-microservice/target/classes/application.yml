@@ -1,6 +1,20 @@
+server:
+  port: 3000
 spring:
   application:
     name: student-service
+  sleuth:
+    sampler:
+      percentage: 1.0
+  cloud:
+    stream:
+      kafka:
+        binders:
+          brokers: 127.0.0.1:9092
+          zkNodes: 127.0.0.1:2181
+      bindings:
+        sleuth:
+          destination: zipkintrace
 eureka:
   client:
     registry-fetch-interval-seconds: 5

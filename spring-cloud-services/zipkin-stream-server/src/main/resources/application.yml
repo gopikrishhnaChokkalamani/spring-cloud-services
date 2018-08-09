@@ -1,6 +1,8 @@
 server:
   port: 9900
 spring:
+  application:
+    name: zipkin-stream-server
   cloud:
     stream:
       kafka:
@@ -19,3 +21,7 @@ zipkin:
     password: cassandra
     keyspace: zipkintrace
     ensure-schema: true
+eureka:
+  client:
+    registry-fetch-interval-seconds: 5
+    service-url.defaultZone: http://localhost:8700/eureka/
