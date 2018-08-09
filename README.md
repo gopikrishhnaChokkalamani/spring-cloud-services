@@ -1,19 +1,22 @@
 # spring-cloud-services
 An example to display various spring cloud services features
 
+This example has implementations for different spring cloud services like,
 
-surfaces information about each individual nodes. things that you can use to observe whats happening right
+1. Config Server
 
-pretty much inspired from google, what google does is they have the borgmom which is borg monitoring approach
+2. Eureka Server
 
-which steeply says that every application should articulate its state, should be observable, should provide information about that would help the operators to better understand the application state.
+3. Eureka Client
 
-This is available in all the applications, 
+4. Zuul Server
 
-you can every have a push notification, informing about different state changes.
+5. Zipkin (log tracing tool - autoconfig)
 
-These endpoints provide a json output which is collected and picturaized for the operator for undetansinf purpose
+6. Zipkin (log tracing tool - streaming log data through kafka and storing it in cassandra)
 
-these endpoints are the actuator available for the user in an UI format to easily understand
+7. Spring Admin Server
 
-important stuffs that you really care about
+8. Hytrix Implementation
+
+9. Feign Client
