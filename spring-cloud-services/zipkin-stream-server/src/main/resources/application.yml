@@ -1,0 +1,21 @@
+server:
+  port: 9900
+spring:
+  cloud:
+    stream:
+      kafka:
+        binder:
+          brokers: 127.0.0.1:9092
+          zkNodes: 127.0.0.1:2181
+      bindings:
+        sleuth:
+          destination: zipkintrace
+zipkin:
+  storage:
+    type: cassandra3
+  cassandra3:
+    contact-points: 127.0.0.1:9042
+    username: cassandra
+    password: cassandra
+    keyspace: zipkintrace
+    ensure-schema: true
