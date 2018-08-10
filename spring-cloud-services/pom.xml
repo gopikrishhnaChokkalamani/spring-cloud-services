@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -21,7 +22,7 @@
 		<java.version>1.8</java.version>
 		<springboot.version>1.5.8.RELEASE</springboot.version>
 		<spring-cloud.version>Dalston.SR4</spring-cloud.version>
-		<springboot.admin-server.version>1.5.1</springboot.admin-server.version>
+		<springboot.admin-server.version>1.5.0</springboot.admin-server.version>
 		<zipkin.version>1.23.1</zipkin.version>
 		<kafka.version>1.0.0</kafka.version>
 		<zipkin.cassandra.version>3.3.1</zipkin.cassandra.version>
@@ -35,6 +36,7 @@
 		<module>config-server</module>
 		<module>springboot-admin-server</module>
 		<module>student-microservice</module>
+		<module>audit-log-service</module>
 	</modules>
 
 	<dependencyManagement>
