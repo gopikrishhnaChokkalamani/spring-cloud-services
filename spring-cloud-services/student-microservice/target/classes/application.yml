@@ -3,6 +3,23 @@ server:
 spring:
   application:
     name: student-service
+  profiles:
+    include:
+    - student
+    - address
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/gopikrishhnachokkalamani
+    username: gopikrishhnachokkalamani
+    password: null
+  jpa:
+    hibernate:
+      ddl-auto: create
+  jackson:
+    deserialization:
+      read-unknown-enum-values-using-default-value: true
+      fail-on-numbers-for-enums: true
+      fail-on-unknown-properties: true
   sleuth:
     sampler:
       percentage: 1.0
@@ -38,3 +55,6 @@ endpoints:
 management:
   security:
     enabled: false
+configuration:
+  property:
+    value: local version
