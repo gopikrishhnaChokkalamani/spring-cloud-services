@@ -6,13 +6,8 @@ public class AddressBuilder {
 
 	private Address address = new Address();
 
-	public AddressBuilder hasAddressId(int addressId) {
-		address.setAddress_id(addressId);
-		return this;
-	}
-
-	public AddressBuilder fromHouseNumber(String houseNumber) {
-		address.setHouseNumber(houseNumber);
+	public AddressBuilder withDoorNo(String doorNo) {
+		address.setDoorNo(doorNo);
 		return this;
 	}
 

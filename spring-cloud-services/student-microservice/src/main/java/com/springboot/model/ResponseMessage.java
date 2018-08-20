@@ -14,6 +14,10 @@ public class ResponseMessage implements Serializable {
 
 	private String responseMsg;
 
+	private String transactionDate;
+
+	private String transactionId;
+
 	public String getResponseCode() {
 		return responseCode;
 	}
@@ -28,5 +32,21 @@ public class ResponseMessage implements Serializable {
 
 	public void setResponseMsg(String responseMsg) {
 		this.responseMsg = responseMsg;
+	}
+
+	public String getTransactionDate() {
+		return transactionDate;
+	}
+
+	public void setTransactionDate(String transactionDate) {
+		this.transactionDate = transactionDate;
+	}
+
+	public String getTransactionId() {
+		return transactionId;
+	}
+
+	public void setTransactionId(String transactionId) {
+		this.transactionId = transactionId;
 	}
 }

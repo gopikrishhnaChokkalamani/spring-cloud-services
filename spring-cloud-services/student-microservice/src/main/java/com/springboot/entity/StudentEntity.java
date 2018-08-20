@@ -1,55 +1,54 @@
 package com.springboot.entity;
 
 import java.io.Serializable;
+import java.util.Date;
+import java.util.UUID;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import org.springframework.data.cassandra.mapping.Column;
+import org.springframework.data.cassandra.mapping.PrimaryKey;
+import org.springframework.data.cassandra.mapping.Table;
 
-@Entity
-@Table(name = "student")
+@Table("student")
 public class StudentEntity implements Serializable {
+
+	/*
+	 * create table student( id text, first_name text, last_name text, age int,
+	 * major text, time_stamp timestamp, PRIMARY KEY ((id, last_name), time_stamp))
+	 * with clustering order by (time_stamp desc); create type
+	 * address_type(address_id text, houseNumber text, street text, city text, state
+	 * text, zipCode text); alter table student add address frozen<address_type>;
+	 * select * from student;
+	 */
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
-	// @GeneratedValue(strategy = GenerationType.AUTO, generator = "uuid")
-	// @GenericGenerator(name = "uuid", strategy = "uuid2")
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "student_id")
-	private int id;
+	@PrimaryKey
+	private StudentPrimaryKey primaryKey;
 
-	private String name;
+	@Column("first_name")
+	private String firstName;
 
+	@Column("age")
 	private String age;
 
-	@OneToOne(cascade = { CascadeType.ALL })
-	@JoinColumn(name = "address_id")
+	@Column("address")
 	private AddressEntity address;
 
+	@Column("major")
 	private String major;
 
-	public int getId() {
-		return id;
+	@Column("transaction_date")
+	private Date timeStamp;
+
+	@Column("unique_id")
+	private UUID uniqueId;
+
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	public String getAge() {
@@ -74,5 +73,29 @@ public class StudentEntity implements Serializable {
 
 	public void setMajor(String major) {
 		this.major = major;
+	}
+
+	public StudentPrimaryKey getPrimaryKey() {
+		return primaryKey;
+	}
+
+	public void setPrimaryKey(StudentPrimaryKey primaryKey) {
+		this.primaryKey = primaryKey;
+	}
+
+	public Date getTimeStamp() {
+		return timeStamp;
+	}
+
+	public void setTimeStamp(Date timeStamp) {
+		this.timeStamp = timeStamp;
+	}
+
+	public UUID getUniqueId() {
+		return uniqueId;
+	}
+
+	public void setUniqueId(UUID uniqueId) {
+		this.uniqueId = uniqueId;
 	}
 }

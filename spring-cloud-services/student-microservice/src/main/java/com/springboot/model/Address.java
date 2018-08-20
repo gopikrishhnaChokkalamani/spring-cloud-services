@@ -10,9 +10,7 @@ public class Address implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private int address_id;
-
-	private String houseNumber;
+	private String doorNo;
 
 	private String street;
 
@@ -22,16 +20,12 @@ public class Address implements Serializable {
 
 	private String zipCode;
 
-	public int getAddress_id() {
-		return address_id;
-	}
-
 	public String getCity() {
 		return city;
 	}
 
-	public String getHouseNumber() {
-		return houseNumber;
+	public String getDoorNo() {
+		return doorNo;
 	}
 
 	public String getState() {
@@ -46,16 +40,12 @@ public class Address implements Serializable {
 		return zipCode;
 	}
 
-	public void setAddress_id(int address_id) {
-		this.address_id = address_id;
-	}
-
 	public void setCity(String city) {
 		this.city = city;
 	}
 
-	public void setHouseNumber(String houseNumber) {
-		this.houseNumber = houseNumber;
+	public void setDoorNo(String doorNo) {
+		this.doorNo = doorNo;
 	}
 
 	public void setState(String state) {

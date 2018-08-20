@@ -1,6 +1,11 @@
 student:
   property:
-  - field: name
+  - field: firstName
+    maxlength: 45
+    minlength: 3
+    format: '[A-Za-z]*'
+    validator: fieldValidator
+  - field: lastName
     maxlength: 45
     minlength: 3
     format: '[A-Za-z]*'

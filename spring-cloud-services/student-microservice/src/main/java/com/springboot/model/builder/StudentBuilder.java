@@ -9,13 +9,18 @@ public class StudentBuilder {
 
 	private Student student = new Student();
 
-	public StudentBuilder hasStudentId(int id) {
+	public StudentBuilder hasStudentId(String id) {
 		student.setId(id);
 		return this;
 	}
 
-	public StudentBuilder hasName(String name) {
-		student.setName(name);
+	public StudentBuilder hasFirstName(String name) {
+		student.setFirstName(name);
+		return this;
+	}
+
+	public StudentBuilder hasLastName(String lastName) {
+		student.setLastName(lastName);
 		return this;
 	}
 

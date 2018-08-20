@@ -1,6 +1,6 @@
 address:
   property:
-  - field: houseNumber
+  - field: doorNo
     maxlength: 6
     minlength: 1
     validator: fieldValidator

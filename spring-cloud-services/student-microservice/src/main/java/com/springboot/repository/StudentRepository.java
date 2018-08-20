@@ -1,14 +1,11 @@
 package com.springboot.repository;
 
-import java.util.List;
-
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import com.springboot.entity.StudentEntity;
+import com.springboot.entity.StudentPrimaryKey;
 
 @Repository
-public interface StudentRepository extends JpaRepository<StudentEntity, String> {
-
-	List<StudentEntity> findByName(String name);
+public interface StudentRepository extends CrudRepository<StudentEntity, StudentPrimaryKey> {
 }

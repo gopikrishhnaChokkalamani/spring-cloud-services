@@ -16,6 +16,16 @@ public class ResponseMessageBuilder {
 		return this;
 	}
 
+	public ResponseMessageBuilder onTransactionDate(String date) {
+		response.setTransactionDate(date);
+		return this;
+	}
+
+	public ResponseMessageBuilder withTransactionId(String id) {
+		response.setTransactionId(id);
+		return this;
+	}
+
 	public ResponseMessage build() {
 		return response;
 	}

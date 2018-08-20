@@ -2,59 +2,14 @@ server:
   port: 3000
 spring:
   application:
-    name: student-service
+    name: student-microservice
   profiles:
     include:
     - student
     - address
-  datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/gopikrishhnachokkalamani
-    username: gopikrishhnachokkalamani
-    password: null
-  jpa:
-    hibernate:
-      ddl-auto: create
-  jackson:
-    deserialization:
-      read-unknown-enum-values-using-default-value: true
-      fail-on-numbers-for-enums: true
-      fail-on-unknown-properties: true
-  sleuth:
-    sampler:
-      percentage: 1.0
   cloud:
-    stream:
-      kafka:
-        binders:
-          brokers: 127.0.0.1:9092
-          zkNodes: 127.0.0.1:2181
-      bindings:
-        sleuth:
-          destination: zipkintrace
-eureka:
-  client:
-    registry-fetch-interval-seconds: 5
-    service-url.defaultZone: http://localhost:8700/eureka/
-info:
-  app:
-    name: student-service
-    description: Student Service
-    version: v1.0
-endpoints:
-  actuator:
-    enabled: true
-    sensitive: true
-  health:
-    enabled: true
-    sensitive: true
-  metrics:
-    enabled: true
-    id: metrics
-    sensitive: true
-management:
-  security:
-    enabled: false
+    config:
+      uri: http://localhost:8888
 configuration:
   property:
     value: local version

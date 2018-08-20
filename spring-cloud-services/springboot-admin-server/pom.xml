@@ -9,6 +9,10 @@
 	</parent>
 	<artifactId>spring-cloud-services.springboot-admin-server</artifactId>
 
+	<properties>
+		<spring-boot-admin-version>1.5.4</spring-boot-admin-version>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -26,6 +30,10 @@
 		<dependency>
 			<groupId>de.codecentric</groupId>
 			<artifactId>spring-boot-admin-server-ui</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-client</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>

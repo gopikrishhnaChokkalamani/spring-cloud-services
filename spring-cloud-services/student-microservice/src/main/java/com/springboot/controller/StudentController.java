@@ -42,10 +42,10 @@ public class StudentController {
 		return new ResponseEntity<>(service.insertStudentRecord(student), HttpStatus.CREATED);
 	}
 
-	@DeleteMapping(path = "{id}")
-	public ResponseEntity<Boolean> deleteStudentDetails(@PathVariable(name = "id") String id) {
-		return new ResponseEntity<>(service.deleteStudentRecord(id), HttpStatus.OK);
-	}
+//	@DeleteMapping(path = "{id}")
+//	public ResponseEntity<Boolean> deleteStudentDetails(@PathVariable(name = "id") String id) {
+//		return new ResponseEntity<>(service.deleteStudentRecord(id), HttpStatus.OK);
+//	}
 
 	@GetMapping(path = "/config")
 	public String fromConfigServer() {
