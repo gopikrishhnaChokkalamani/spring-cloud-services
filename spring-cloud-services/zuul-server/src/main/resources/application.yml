@@ -1,0 +1,23 @@
+server:
+  port: 6666
+spring:
+  application:
+    name: zuul-server
+zuul:
+  ignored-services: '*'
+  host:
+    max-total-connections: 1000
+    max-per-route-connections: 1000
+  routes:
+    student-microservice:
+      path: /api/student/**
+      service-id: student-microservice
+      strip-prefix: false
+ribbon:
+  eureka:
+    enabled: true
+eureka:
+  client:
+    registry-fetch-interval-seconds: 5
+    service-url:
+      defaultZone: http://localhost:8700/eureka/
