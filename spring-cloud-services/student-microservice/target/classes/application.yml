@@ -2,39 +2,14 @@ server:
   port: 3000
 spring:
   application:
-    name: student-service
-  sleuth:
-    sampler:
-      percentage: 1.0
+    name: student-microservice
+  profiles:
+    include:
+    - student
+    - address
   cloud:
-    stream:
-      kafka:
-        binders:
-          brokers: 127.0.0.1:9092
-          zkNodes: 127.0.0.1:2181
-      bindings:
-        sleuth:
-          destination: zipkintrace
-eureka:
-  client:
-    registry-fetch-interval-seconds: 5
-    service-url.defaultZone: http://localhost:8700/eureka/
-info:
-  app:
-    name: student-service
-    description: Student Service
-    version: v1.0
-endpoints:
-  actuator:
-    enabled: true
-    sensitive: true
-  health:
-    enabled: true
-    sensitive: true
-  metrics:
-    enabled: true
-    id: metrics
-    sensitive: true
-management:
-  security:
-    enabled: false
+    config:
+      uri: http://localhost:8888
+configuration:
+  property:
+    value: local version
