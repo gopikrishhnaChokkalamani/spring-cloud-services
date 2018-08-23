@@ -6,10 +6,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
-@EnableZuulProxy
-@EnableEurekaClient
-@EnableFeignClients
 @SpringBootApplication
+@EnableZuulProxy
+@EnableFeignClients
+@EnableEurekaClient
 public class ZuulServerApplication {
 
 	public static void main(String[] args) {

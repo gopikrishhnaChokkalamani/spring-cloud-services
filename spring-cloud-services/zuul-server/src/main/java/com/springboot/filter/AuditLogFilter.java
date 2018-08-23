@@ -23,21 +23,18 @@ public class AuditLogFilter extends ZuulFilter {
 	private AuditLoggingFeignClient feignClient;
 
 	@Override
-	public boolean shouldFilter() {
-		// TODO Auto-generated method stub
-		return true;
-	}
-
-	@Override
 	public String filterType() {
-		// TODO Auto-generated method stub
 		return "pre";
 	}
 
 	@Override
 	public int filterOrder() {
-		// TODO Auto-generated method stub
 		return 1;
+	}
+
+	@Override
+	public boolean shouldFilter() {
+		return true;
 	}
 
 	@Override
