@@ -11,11 +11,12 @@ zuul:
   routes:
     student-microservice:
       path: /api/student/**
+      sensitive-headers:
       service-id: student-microservice
       strip-prefix: false
 ribbon:
   eureka:
-    enabled: true
+    enabled: false
 eureka:
   client:
     registry-fetch-interval-seconds: 5
