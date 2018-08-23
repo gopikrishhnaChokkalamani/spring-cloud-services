@@ -1,5 +1,5 @@
 server:
-  port: 6666
+  port: 5001
 spring:
   application:
     name: zuul-server
@@ -11,12 +11,20 @@ zuul:
   routes:
     student-microservice:
       path: /api/student/**
-      sensitive-headers:
+      sensitive-headers: null
       service-id: student-microservice
       strip-prefix: false
 ribbon:
   eureka:
-    enabled: false
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 10000000
 eureka:
   client:
     registry-fetch-interval-seconds: 5

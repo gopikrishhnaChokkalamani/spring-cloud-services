@@ -36,8 +36,8 @@ public class StudentController {
 	}
 
 	@PostMapping
-	public ResponseEntity<?> insertStudentDetails(@Validated @RequestBody Student student) {
-		return new ResponseEntity<>(service.insertStudentRecord(student), HttpStatus.CREATED);
+	public ResponseEntity<Student> insertStudentDetails(@Validated @RequestBody Student student) {
+		return new ResponseEntity<>(service.insertStudentRecord(student), HttpStatus.OK);
 	}
 
 //	@DeleteMapping(path = "{id}")

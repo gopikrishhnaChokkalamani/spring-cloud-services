@@ -11,7 +11,7 @@ import com.springboot.model.AuditLog;
 import com.springboot.repository.AuditLogRepository;
 
 @RestController
-@RequestMapping("/api/student")
+@RequestMapping("/auditLog")
 public class AuditLogController {
 
 	@Autowired

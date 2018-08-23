@@ -10,5 +10,5 @@ import com.springboot.model.AuditLog;
 public interface AuditLoggingFeignClient {
 
 	@RequestMapping(value = "/auditLog", method = RequestMethod.POST)
-	public boolean auditLogRequest(AuditLog auditLog);
+	public void auditLogRequest(AuditLog auditLog);
 }
