@@ -17,6 +17,14 @@ zuul:
 ribbon:
   eureka:
     enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          strategy: THREAD
+          thread:
+            timeoutInMilliseconds: 10000000
 eureka:
   client:
     registry-fetch-interval-seconds: 5
