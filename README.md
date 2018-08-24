@@ -1,25 +1,34 @@
 # spring-cloud-services
 An example to display various spring cloud services features
 
-This example has implementations for different spring cloud services like,
+This example has implementations for,
 
-1. Config Server
+# Spring Cloud Services
+. Config Server
 
-2. Eureka Server
+. Eureka Server
 
-3. Eureka Client
+. Eureka Client
 
-4. Zuul Server
+. Zuul Server
 
-5. Zipkin (log tracing tool - autoconfig)
+. Spring Admin Server
 
-6. Zipkin (log tracing tool - streaming log data through kafka and storing it in cassandra)
+. Hytrix Implementation
 
-7. Spring Admin Server
+. Feign Client
 
-8. Hytrix Implementation
+# Microservice Visualization
+. Zipkin (log tracing tool - autoconfig)
 
-9. Feign Client
+. Zipkin (log tracing tool - streaming log data through kafka and storing it in cassandra)
+
+# Datasource
+. Cassandra
+
+# Messaging Queue
+. Kafka
+
 
 # Eureka Server
 ![Eureka Server](https://github.com/gopikrishhnaChokkalamani/spring-cloud-services/blob/master/spring-cloud-services/eureka-screenshot.png)
