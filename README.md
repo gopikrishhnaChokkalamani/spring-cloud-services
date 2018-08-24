@@ -22,6 +22,8 @@ An example to display various spring cloud services features used for building m
 
 . Zipkin (log tracing tool - streaming log data through kafka and storing it in cassandra)
 
+![Zipkin Log Tracing](https://github.com/gopikrishhnaChokkalamani/spring-cloud-services/blob/master/spring-cloud-services/zipkin-service.png)
+
 # Datasource
 . Cassandra
 
