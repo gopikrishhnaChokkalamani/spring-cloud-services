@@ -26,10 +26,10 @@
 ![Zipkin Log Tracing](https://github.com/gopikrishhnaChokkalamani/spring-cloud-services/blob/master/spring-cloud-services/zipkin-trace-details.png)
 
 # Datasource
-. Cassandra
+. Apache Cassandra
 
 # Messaging Queue
-. Kafka
+. Apache Kafka
 
 
 # Eureka Server
