@@ -24,6 +24,8 @@ An example to display various spring cloud services features used for building m
 
 ![Zipkin Log Tracing](https://github.com/gopikrishhnaChokkalamani/spring-cloud-services/blob/master/spring-cloud-services/zipkin-service.png)
 
+![Zipkin Log Tracing](https://github.com/gopikrishhnaChokkalamani/spring-cloud-services/blob/master/spring-cloud-services/zipkin-trace-details.png)
+
 # Datasource
 . Cassandra
 
@@ -36,3 +38,9 @@ An example to display various spring cloud services features used for building m
 
 # Spring Admin Server
 ![Spring Admin Server](https://github.com/gopikrishhnaChokkalamani/spring-cloud-services/blob/master/spring-cloud-services/spring-admin-server-screenshot.png)
+
+# Request
+![Request](https://github.com/gopikrishhnaChokkalamani/spring-cloud-services/blob/master/spring-cloud-services/request.png)
+
+# Response
+![Response](https://github.com/gopikrishhnaChokkalamani/spring-cloud-services/blob/master/spring-cloud-services/response.png)
