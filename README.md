@@ -14,6 +14,8 @@
 
 . Feign Client
 
+. Sleuth
+
 # Microservice Visualization
 . Zipkin (log tracing tool - autoconfig)
 
