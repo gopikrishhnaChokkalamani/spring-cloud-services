@@ -12,12 +12,13 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.JsonMappingException.Reference;
+import com.springboot.exception.DuplicateStudentRecordException;
 import com.springboot.exception.StudentNotFoundException;
 import com.springboot.model.Error;
 import com.springboot.model.ErrorResponse;
 
 @RestControllerAdvice
-public class StudentControllerAdvice {
+public class APIExceptionHandler {
 
 	@ExceptionHandler
 	public ResponseEntity<ErrorResponse> handleStudentNotFoundException(HttpMessageNotReadableException exception) {
@@ -39,12 +40,21 @@ public class StudentControllerAdvice {
 
 	@ExceptionHandler
 	public ResponseEntity<List<ErrorResponse>> handleValidationErrors(MethodArgumentNotValidException exception) {
-		List<ErrorResponse> response = exception.getBindingResult().getFieldErrors().stream().map(t-> {
+		List<ErrorResponse> response = exception.getBindingResult().getFieldErrors().stream().map(t -> {
 			ErrorResponse e = new ErrorResponse();
 			e.setCode(t.getCode());
 			e.setMessage(t.getDefaultMessage());
 			return e;
 		}).collect(Collectors.toList());
-		return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST); 
+		return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+	}
+
+	@ExceptionHandler
+	public ResponseEntity<ErrorResponse> handleDuplicateStudentRecordException(
+			DuplicateStudentRecordException exception) {
+		final ErrorResponse response = new ErrorResponse();
+		response.setCode("invalid request - data conflict");
+		response.setMessage(exception.getMessage());
+		return new ResponseEntity<>(response, HttpStatus.CONFLICT);
 	}
 }

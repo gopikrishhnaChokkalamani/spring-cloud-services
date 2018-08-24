@@ -5,3 +5,4 @@
 target/
 .springBeans
 .factorypath
+.DS_Store
