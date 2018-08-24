@@ -21,4 +21,8 @@ This example has implementations for different spring cloud services like,
 
 9. Feign Client
 
-![All Services](https://github.com/gopikrishhnaChokkalamani/spring-cloud-services/blob/master/spring-cloud-services/services.png)
+# Eureka Server
+![Eureka Server](https://github.com/gopikrishhnaChokkalamani/spring-cloud-services/blob/master/spring-cloud-services/eureka-screenshot.png)
+
+# Spring Admin Server
+![Spring Admin Server](https://github.com/gopikrishhnaChokkalamani/spring-cloud-services/blob/master/spring-cloud-services/spring-admin-server-screenshot.png)
