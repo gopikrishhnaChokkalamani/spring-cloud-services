@@ -1,7 +1,6 @@
 # spring-cloud-services
-An example to display various spring cloud services features
 
-This example has implementations for,
+An example to display various spring cloud services features used for building microservice architecture.
 
 # Spring Cloud Services
 . Config Server
