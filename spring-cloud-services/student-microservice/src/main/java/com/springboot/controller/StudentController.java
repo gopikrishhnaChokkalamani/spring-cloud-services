@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -38,14 +39,16 @@ public class StudentController {
 
 	@PostMapping
 	@ContinueSpan
-	public ResponseEntity<Student> insertStudentDetails(@Validated @RequestBody Student student) {
+	public ResponseEntity<Student> insertStudentDetails(@Validated @RequestBody Student student,
+			@RequestHeader("request-id") String requestId) {
 		return new ResponseEntity<>(service.insertStudentRecord(student), HttpStatus.OK);
 	}
 
-//	@DeleteMapping(path = "{id}")
-//	public ResponseEntity<Boolean> deleteStudentDetails(@PathVariable(name = "id") String id) {
-//		return new ResponseEntity<>(service.deleteStudentRecord(id), HttpStatus.OK);
-//	}
+	// @DeleteMapping(path = "{id}")
+	// public ResponseEntity<Boolean> deleteStudentDetails(@PathVariable(name =
+	// "id") String id) {
+	// return new ResponseEntity<>(service.deleteStudentRecord(id), HttpStatus.OK);
+	// }
 
 	@GetMapping(path = "/config")
 	public String fromConfigServer() {
