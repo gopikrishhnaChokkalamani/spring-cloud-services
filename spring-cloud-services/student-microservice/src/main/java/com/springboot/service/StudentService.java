@@ -3,6 +3,7 @@ package com.springboot.service;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.sleuth.annotation.ContinueSpan;
 import org.springframework.stereotype.Service;
 
 import com.datastax.driver.core.utils.UUIDs;
@@ -20,6 +21,7 @@ public class StudentService {
 	@Autowired
 	private StudentRepository repository;
 
+	@ContinueSpan
 	public Student insertStudentRecord(Student student) {
 		StudentEntity entity = mapModelToEntity(student);
 		Student response = mapEntityToModel(repository.save(entity));
@@ -35,6 +37,7 @@ public class StudentService {
 	// }
 	// }
 
+	@ContinueSpan
 	public StudentEntity mapModelToEntity(Student student) {
 		StudentPrimaryKey primaryKey = new StudentPrimaryKey();
 		primaryKey.setId(student.getId());
@@ -56,6 +59,7 @@ public class StudentService {
 		return entity;
 	}
 
+	@ContinueSpan
 	public Student mapEntityToModel(StudentEntity entity) {
 		Student student = Builders.student().hasStudentId(entity.getPrimaryKey().getId())
 				.hasFirstName(entity.getFirstName()).hasLastName(entity.getPrimaryKey().getLastName())

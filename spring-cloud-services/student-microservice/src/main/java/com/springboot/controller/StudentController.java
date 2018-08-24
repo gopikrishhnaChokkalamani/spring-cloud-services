@@ -2,6 +2,7 @@ package com.springboot.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.sleuth.annotation.ContinueSpan;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -36,6 +37,7 @@ public class StudentController {
 	}
 
 	@PostMapping
+	@ContinueSpan
 	public ResponseEntity<Student> insertStudentDetails(@Validated @RequestBody Student student) {
 		return new ResponseEntity<>(service.insertStudentRecord(student), HttpStatus.OK);
 	}
