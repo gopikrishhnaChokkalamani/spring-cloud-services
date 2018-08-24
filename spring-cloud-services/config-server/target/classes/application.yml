@@ -67,3 +67,23 @@ eureka:
   client:
     registry-fetch-interval-seconds: 5
     service-url.defaultZone: http://localhost:8700/eureka/
+
+info:
+  app:
+    name: config-server
+    description: Config Server
+    version: v1.0
+endpoints:
+  actuator:
+    enabled: true
+    sensitive: true
+  health:
+    enabled: true
+    sensitive: true
+  metrics:
+    enabled: true
+    id: metrics
+    sensitive: true
+management:
+  security:
+    enabled: false
